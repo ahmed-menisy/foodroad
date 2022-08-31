@@ -1,0 +1,161 @@
+<section class="register form d-lg-flex">
+  <div class="left item py-4 hstack min-vh-100">
+    <div class="hero col-md-11 col-lg-12 col-xl-10 mx-auto">
+      <div class="main-title">
+        <h1 class="te-green fw-bold hstack justify-content-center">
+          <img src="./assets/images/3.png" />
+          <span class="ms-1">Food<span class="te-yellow">Road</span></span>
+        </h1>
+      </div>
+
+      <div class="content mt-4">
+        <div class="title text-center">
+          <h2 class="te-green display-5">Register</h2>
+          <p class="te-light small">
+            Let’s Sign up first for enter into Food Road Website. Uh She Up!
+          </p>
+        </div>
+
+        <form
+          class="mt-5"
+          [formGroup]="register"
+          (ngSubmit)="submitRegister(register)"
+        >
+          <div class="container-fluid">
+            <div class="row g-3">
+              <div class="col-md-6">
+                <div class="data-input">
+                  <input  autocomplete="off" 
+                    #first_name
+                   
+                    formControlName="first_name"
+                    [ngClass]="{
+                      'is-invalid':(register.get('first_name')?.errors && first_name.value.length >0) ,
+                      'is-valid':(register.get('first_name')?.valid) 
+                    }"
+                    class="form-control form-control-lg"
+                    type="text"
+                    id="f-name"
+                    placeholder=" "
+                  />
+                  <label for="f-name">First Name</label>
+                  <ul *ngIf="register.get('first_name')?.errors &&first_name.value.length >0" class='alert alert-danger p-2 mt-1 small position-absolute w-100 text-nowrap '>
+                    <li>Required</li>
+                    <li>Min Length 2 Character</li>
+                    <li>Max Length 20 Character</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="data-input">
+                  <input  autocomplete="off" 
+                  formControlName="last_name"
+                  #last_name
+                  [ngClass]="{
+                    'is-invalid':(register.get('last_name')?.errors && last_name.value.length >0) ,
+                    'is-valid':(register.get('last_name')?.valid) 
+                  }"
+                    class="form-control form-control-lg"
+                    type="text"
+                    id="l-name"
+                    placeholder=" "
+                  />
+                  <label for="l-name">Last Name</label>
+                  <ul *ngIf="register.get('last_name')?.errors &&last_name.value.length >0" class='alert alert-danger p-2 mt-1 small position-absolute w-100 text-nowrap '>
+                    <li>Required</li>
+                    <li>Min Length 2 Character</li>
+                    <li>Max Length 20 Character</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="col-12">
+                <div class="data-input">
+                  <input  autocomplete="off" 
+                  formControlName="email"
+                  #email
+                  [ngClass]="{
+                    'is-invalid':(register.get('email')?.errors && email.value.length >0) ,
+                    'is-valid':(register.get('email')?.valid) 
+                  }"
+                    class="form-control form-control-lg"
+                    type="email"
+                    id="email"
+                    placeholder=" "
+                  />
+                  <label for="email">Mail Address</label>
+                  <ul *ngIf="register.get('email')?.errors &&email.value.length >0" class='alert alert-danger p-2 mt-1 small position-absolute w-100 text-nowrap '>
+                    <li>Required</li>
+                    <li>In Valid Email Format</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="col-12">
+                <div class="data-input">
+                  <input  autocomplete="off" 
+                  formControlName="password"
+                  #password
+                  [ngClass]="{
+                    'is-invalid':(register.get('password')?.errors && password.value.length >0) ,
+                    'is-valid':(register.get('password')?.valid) 
+                  }"
+                    class="form-control form-control-lg"
+                    type="password"
+                    id="password"
+                    placeholder=" "
+                  />
+                  <label for="password">Password</label>
+                  <ul *ngIf="register.get('password')?.errors &&password.value.length >0" class='alert alert-danger p-2 mt-1 small position-absolute w-100 text-nowrap '>
+                    <li>Required</li>
+                    <li>Minimum eight characters</li>
+                    <li>at least one letter and one number</li>
+                  </ul>
+                  
+                </div>
+              </div>
+              
+              <div class="col-12">
+                <div class="data-input">
+                  <input  autocomplete="off" 
+                  formControlName="age"
+                  #age
+                  [ngClass]="{
+                    'is-invalid':(register.get('age')?.errors && age.value.length >0) ,
+                    'is-valid':(register.get('age')?.valid) 
+                  }"
+                    class="form-control form-control-lg"
+                    type="number"
+                    id="age"
+                    placeholder=" "
+                    max="80"
+                    min="18"
+                  />
+                  <label for="age">age</label>
+                  <ul *ngIf="register.get('age')?.errors &&age.value.length >0" class='alert alert-danger p-2 mt-1 small position-absolute w-100 text-nowrap '>
+                    <li>Required</li>
+                    <li>Minimum age 16</li>
+                    <li>Maximum age 80</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="hstack gap-3 mt-5">
+              <a class="bt-re bt-light text-reset" routerLink="/login">Login</a>
+              <button
+                type="submit"
+                class="bt-re bt-green flex-grow-1 text-center text-reset"
+              >
+               <span *ngIf="isRegister"><i class="fas fa-spinner fa-spin"></i></span>
+               <span *ngIf="!isRegister"> Get Started</span>
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="right item"></div>
+</section>

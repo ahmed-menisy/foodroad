@@ -1,0 +1,58 @@
+:host {
+  position: relative;
+
+  .loading {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-content: center;
+    background-color: rgba(117, 111, 111, 0.322);
+    backdrop-filter: blur(10px);
+  }
+}
+
+// Start Header
+header {
+  min-height: 70vh;
+  position: relative;
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: rgb(0 0 0 / 60%);
+    backdrop-filter: blur(3px);
+  }
+}
+
+// Start Section
+.data-hero {
+    width: 80%;
+  max-height: 80vh;
+  overflow-y: auto;
+  margin: 0 auto;
+  padding: 1rem;
+ margin-top: -10rem;
+  border-radius: .5rem;
+  box-shadow: 0 0 15px rgba(0,0,0,.2);
+  background-color: #fff;
+}
+.data-content {
+  
+  .info {
+    p {
+      counter-increment: num-info;
+      position: relative;
+      display: flex;
+      align-items: center;
+      color: #fff;
+      &::before {
+        content: counter(num-info);
+        width: 45px;
+        color: var(--green);
+        padding:0 .3rem;
+        font-weight: 700;
+        font-size: 1.3rem;
+      }
+    }
+  }
+}

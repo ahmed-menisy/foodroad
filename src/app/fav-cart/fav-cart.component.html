@@ -1,0 +1,30 @@
+<section class="cart-fav">
+  <div class="container-fluid">
+    <div class="row row-cols-1 gy-3">
+      <div class="col" *ngFor="let fav of dataList">
+       <div class="row g-0">
+        <div class="col-11">
+          <div class="row gx-1 align-items-center border rounded item-fav" [routerLink]="['/details',fav.recipe_id]">
+            <div class="col-4">
+              <img
+                class="w-100 rounded-start"
+                [src]="fav.image_url"
+                alt="photo"
+              />
+            </div>
+            <div class="col-8">
+              <h3 class="fav-title"><span class="custom-sub">Title:</span> {{ fav.title | tirmtext: 2 }} . . .</h3>
+              <p class="fav-sub pt-2"><span class="custom-sub">Publisher:</span> {{ fav.publisher| tirmtext:2 }} . . .</p>
+            </div>
+            
+          </div>
+        </div>
+        <div class="col hstack">
+          <i class="fa-solid fa-square-minus fa-lg text-danger del-icon" (click)="deleteItem(fav)"></i>
+        </div>
+       </div>
+      </div>
+    </div>
+  </div>
+</section>
+

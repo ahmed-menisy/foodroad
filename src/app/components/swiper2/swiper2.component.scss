@@ -1,0 +1,56 @@
+@import "swiper/css";
+@import "swiper/css/bundle";
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  height: calc((100% - 30px) / 2) !important;
+
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+.swiper-slide img {
+  height: 200px;
+}
+.card {
+  height: 100% !important;
+  border-color: transparent;
+  .item-card {
+    cursor: pointer;
+  }
+}
+.loading {
+  z-index: 999;
+  position: absolute;
+  inset: 0;
+  background-color: rgb(250 250 250 / 80%);
+  display: grid;
+  place-content: center;
+}
+div.arrow {
+ 
+  img  {
+     width: 40px;
+     cursor: pointer;
+  }
+  button {
+    all: unset;
+  }
+ 
+}

@@ -1,0 +1,79 @@
+{
+  "our": [
+    {
+      "title": "carrot",
+      "img": "./assets/images/carrot.png"
+    },
+
+    {
+      "title": "broccoli",
+      "img": "./assets/images/broccoli.png"
+    },
+
+    {
+      "title": "asparagus",
+      "img": "./assets/images/asparagus.png"
+    },
+
+    {
+      "title": "cauliflower",
+      "img": "./assets/images/cauliflower.png"
+    },
+
+    {
+      "title": "corn",
+      "img": "./assets/images/corn.png"
+    },
+
+    {
+      "title": "cucumber",
+      "img": "./assets/images/cucumber.png"
+    },
+
+    {
+      "title": "green pepper",
+      "img": "./assets/images/green-pepper.png"
+    },
+
+    {
+      "title": "lettuce",
+      "img": "./assets/images/lettuce.png"
+    },
+    {
+      "title": "mushrooms",
+      "img": "./assets/images/mushroom.png"
+    },
+    {
+      "title": "onion",
+      "img": "./assets/images/onion.png"
+    },
+    {
+      "title": "potato",
+      "img": "./assets/images/potato.png"
+    },
+    {
+      "title": "pizza",
+      "img": "./assets/images/pizza.png"
+    },
+    {
+      "title": "hamburger",
+      "img": "./assets/images/hamburger.png"
+    },
+    {
+      "title": "salad",
+      "img": "./assets/images/salad.png"
+    }
+  ],
+  "Partnership": [
+    {
+      "title": "Join Courier",
+      "description": "Courier provides product and engineering teams with intelligent notification infrastructure so you can give your customers the experience they deserve.",
+      "img": "./assets/images/13.png"
+    },
+    {
+      "title": "Join Merchant",
+      "description": "Courier provides product and engineering teams with intelligent notification infrastructure so you can give your customers the experience they deserve.",
+      "img": "./assets/images/14.png"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+:host {
+  .footer-item {
+    .icon {
+      display: grid;
+      place-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 0.7rem;
+      background-color: var(--green);
+      color: #fff;
+      margin-right: 0.7rem;
+      font-size: 1.3rem;
+    }
+  }
+}

@@ -1,0 +1,28 @@
+:host {
+  section {
+   padding: 6rem 0;
+  }
+ 
+  header {
+   position: relative;
+   &::before {
+     position: absolute;
+     content: '';
+     z-index: -1;
+     inset: 0 0 120px 0;
+     background-color: #F8FCF8;
+   }
+ }
+ 
+ .our-team {
+  .card {
+    box-shadow: 0 0 24px #5192592a;
+  }
+ }
+
+ .work-our {
+  .item {
+    box-shadow: 0 0 24px #51925925;
+  }
+ }
+}

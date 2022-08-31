@@ -1,0 +1,375 @@
+<header>
+  <div class="container pt-5">
+    <div class="row gy-4 flex-wrap-reverse align-items-center">
+      <div class="col-lg-5" data-aos="fade-right">
+        <div class="content">
+          <h1 class="display-3">Contact</h1>
+          <p class="text-black-50 py-3 lh-lg">
+            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+            nonumy eirmod tempor invidunt ut labore et
+          </p>
+        </div>
+      </div>
+      <div class="col-lg-7" data-aos="fade-left">
+        <div class="image">
+          <img
+            class="w-100"
+            src="./assets/images/44.png"
+            alt="pizza photo"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<main>
+  <!-- -------------- Start Send Message -------------- -->
+  <section class="message">
+    <div class="container">
+      <div class="content" data-aos="fade-right">
+        <h2 class="h1 fw-bolder text-center">Send us a Message</h2>
+      </div>
+      <form
+        data-aos="fade-left"
+        class="mt-5 bg-light rounded-5 p-5 shadow"
+        action="https://formspree.io/f/mjvzkpdr"
+        method="POST"
+        (ngSubmit)="send($event, msg)"
+        [formGroup]="msg"
+      >
+        <div class="form-data pt-4">
+          <div class="row">
+            <div
+              class="col-lg-6"
+              data-aos="zoom-in"
+              data-aos-delay="300"
+              data-aos-offset="0"
+            >
+              <div class="i-g">
+                <label
+                  for="name"
+                  [ngClass]="{
+                    'is-valid': msg.get('name')?.valid,
+                    'is-invalid':
+                      msg.get('name')?.errors && name.value.length > 0
+                  }"
+                  ><i class="fa-regular fa-user fa-sm me-2"></i
+                ></label>
+                <input
+                  autocomplete="off"
+                  #name
+                  [ngClass]="{
+                    'is-valid': msg.get('name')?.valid,
+                    'is-invalid':
+                      msg.get('name')?.errors && name.value.length > 0
+                  }"
+                  formControlName="name"
+                  name="name"
+                  id="name"
+                  type="text"
+                  placeholder="Your Name"
+                />
+                <ul
+                  *ngIf="msg.get('name')?.errors && name.value.length > 0"
+                  class="alert alert-danger p-2 mt-1 small position-absolute top-100 w-100 text-nowrap"
+                >
+                  <li *ngIf="msg.get('name')?.getError('required')">
+                    Required
+                  </li>
+                  <li *ngIf="msg.get('name')?.getError('minlength')">
+                    Min Length 2
+                  </li>
+                  <li *ngIf="msg.get('name')?.getError('maxlength')">
+                    Max Length 25
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div
+              class="col-lg-6"
+              data-aos="zoom-in-up"
+              data-aos-delay="650"
+              data-aos-offset="0"
+            >
+              <div class="i-g">
+                <label
+                  for="address"
+                  [ngClass]="{
+                    'is-valid': msg.get('address')?.valid,
+                    'is-invalid':
+                      msg.get('address')?.errors && address.value.length > 0
+                  }"
+                  ><i class="fa-solid fa-location-dot fa-sm me-2"></i
+                ></label>
+                <input
+                  autocomplete="off"
+                  #address
+                  [ngClass]="{
+                    'is-valid': msg.get('address')?.valid,
+                    'is-invalid':
+                      msg.get('address')?.errors && address.value.length > 0
+                  }"
+                  name="address"
+                  id="address"
+                  type="text"
+                  placeholder="Your Address"
+                  formControlName="address"
+                />
+                <ul
+                  *ngIf="msg.get('address')?.errors && address.value.length"
+                  class="alert alert-danger p-2 mt-1 small position-absolute top-100 w-100 text-nowrap"
+                >
+                  <li *ngIf="msg.get('address')?.getError('required')">
+                    Required
+                  </li>
+                  <li *ngIf="msg.get('address')?.getError('minlength')">
+                    Min Length 2
+                  </li>
+                  <li *ngIf="msg.get('address')?.getError('maxlength')">
+                    Max Length 25
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div
+              class="col-lg-6"
+              data-aos="zoom-in"
+              data-aos-delay="950"
+              data-aos-offset="0"
+            >
+              <div class="i-g">
+                <label
+                  for="email"
+                  [ngClass]="{
+                    'is-valid': msg.get('email')?.valid,
+                    'is-invalid':
+                      msg.get('email')?.errors && email.value.length > 0
+                  }"
+                  ><i class="fa-regular fa-envelope fa-sm me-2"></i
+                ></label>
+                <input
+                  autocomplete="off"
+                  #email
+                  [ngClass]="{
+                    'is-valid': msg.get('email')?.valid,
+                    'is-invalid':
+                      msg.get('email')?.errors && email.value.length > 0
+                  }"
+                  id="email"
+                  name="email"
+                  type="email"
+                  placeholder="Email Address"
+                  formControlName="email"
+                />
+                <ul
+                  *ngIf="msg.get('email')?.errors && email.value.length > 0"
+                  class="alert alert-danger p-2 mt-1 small position-absolute top-100 w-100 text-nowrap"
+                >
+                  <li *ngIf="msg.get('email')?.getError('required')">
+                    Required
+                  </li>
+                  <li *ngIf="msg.get('email')?.getError('email')">
+                    InValid Email Formate
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div
+              class="col-lg-6"
+              data-aos="zoom-in-up"
+              data-aos-delay="1100"
+              data-aos-offset="0"
+            >
+              <div class="i-g">
+                <label
+                  for="tel"
+                  [ngClass]="{
+                    'is-valid': msg.get('phone')?.valid,
+                    'is-invalid':
+                      msg.get('phone')?.errors && phone.value.length > 0
+                  }"
+                  ><i class="fa-solid fa-phone-flip fa-sm me-2"></i
+                ></label>
+                <input
+                  autocomplete="off"
+                  [ngClass]="{
+                    'is-valid': msg.get('phone')?.valid,
+                    'is-invalid':
+                      msg.get('phone')?.errors && phone.value.length > 0
+                  }"
+                  #phone
+                  id="tel"
+                  name="tel"
+                  type="tel"
+                  placeholder="Phone Number"
+                  formControlName="phone"
+                />
+                <ul
+                  *ngIf="msg.get('phone')?.errors && phone.value.length > 0"
+                  class="alert alert-danger p-2 mt-1 small position-absolute top-100 w-100 text-nowrap"
+                >
+                  <li *ngIf="msg.get('phone')?.getError('required')">
+                    Required
+                  </li>
+                  <li *ngIf="msg.get('phone')?.getError('pattern')">
+                    <ul>
+                      <li>015 XXX XXX XX</li>
+                      <li>012 XXX XXX XX</li>
+                      <li>011 XXX XXX XX</li>
+                      <li>010 XXX XXX XX</li>
+                      <li>11 Number</li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div
+              class="col-12"
+              data-aos="zoom-in-up"
+              data-aos-delay="1300"
+              data-aos-offset="0"
+            >
+              <div class="i-g">
+                <label
+                  for="tel"
+                  [ngClass]="{
+                    'is-valid': msg.get('meassage')?.valid,
+                    'is-invalid':
+                      msg.get('meassage')?.errors && meassage.value.length > 0
+                  }"
+                >
+                  <i class="fa-solid fa-comment fa-sm me-2"></i>
+                </label>
+                <textarea
+                  #meassage
+                  placeholder="Your message"
+                  class="p-2"
+                  formControlName="meassage"
+                  [ngClass]="{
+                    'is-valid': msg.get('meassage')?.valid,
+                    'is-invalid':
+                      msg.get('meassage')?.errors && meassage.value.length > 0
+                  }"
+                  autocomplete="off"
+                  name="msg"
+                  id="msg"
+                ></textarea>
+                <ul
+                  *ngIf="
+                    msg.get('meassage')?.errors && meassage.value.length > 0
+                  "
+                  class="alert alert-danger p-2 mt-1 small position-absolute top-100 w-100 text-nowrap"
+                >
+                  <li *ngIf="msg.get('meassage')?.getError('required')">
+                    Required
+                  </li>
+                  <li *ngIf="msg.get('meassage')?.getError('minlength')">
+                    Min Length 5
+                  </li>
+                  <li *ngIf="msg.get('meassage')?.getError('maxlength')">
+                    Max Length 100
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="text-center"
+            data-aos="zoom-in-up"
+            data-aos-delay="1500"
+            data-aos-offset="0"
+          >
+            <button type="submit" class="bl-re bl-green mt-5">
+              Send Message
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>
+  <!-- -------------- End Send Message -------------- -->
+  <!-- -------------- Start Office Address -------------- -->
+  <section class="office">
+    <div class="container-fluid ps-0">
+      <div class="row gy-4 align-items-center">
+        <div class="col-lg-4" data-aos="zoom-in">
+          <div class="image">
+            <img
+              src="./assets/images/46.png"
+              alt="icon photo"
+              class="w-100"
+            />
+          </div>
+        </div>
+        <div class="col-lg-6 offset-lg-2" data-aos="zoom-in-up"  data-aos-delay="400">
+          <div class="item">
+            <div class="main-title ps-5">
+              <h2 class="display-4 fw-semibold">Office Address</h2>
+              <ul class="list-group list-group-flush mt-5">
+                <li class="list-group-item">
+                  <div class="data hstack gap-4 py-4 px-2">
+                    <div class="icon flex-shrink-0">
+                      <i class="fa-solid fa-location-dot"></i>
+                    </div>
+                    <h3 class="text-muted">
+                      2118 Thornridge Cir. Syracuse, Connecticut 35624
+                    </h3>
+                  </div>
+                </li>
+                <li class="list-group-item">
+                  <div class="data hstack gap-4 py-4 px-2">
+                    <div class="icon flex-shrink-0">
+                      <i class="fa-solid fa-phone-flip"></i>
+                    </div>
+                    <h3 class="text-muted">(010) 152 650 77</h3>
+                  </div>
+                </li>
+                <li class="list-group-item">
+                  <div class="data hstack gap-4 py-4 px-2">
+                    <div class="icon flex-shrink-0">
+                      <i class="fa-solid fa-envelope"></i>
+                    </div>
+                    <h3 class="text-muted">amelmaster16@yahoo.com</h3>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- -------------- End Office Address -------------- -->
+  <!-- -------------- Start Map -------------- -->
+  <section class="map" data-aos="fade-up">
+    <div class="container">
+      <div class="mapouter">
+        <div class="gmap_canvas">
+          <iframe
+            id="gmap_canvas"
+            src="https://maps.google.com/maps?q=%D9%83%D9%81%D8%B1%20%D8%A7%D9%84%D8%B4%D9%8A%D8%AE&t=k&z=17&ie=UTF8&iwloc=&output=embed"
+            frameborder="0"
+            scrolling="no"
+            marginheight="0"
+            marginwidth="0"
+          ></iframe
+          ><br /><style>
+            .mapouter {
+              position: relative;
+              text-align: right;
+            }</style
+          ><style>
+            .gmap_canvas {
+              overflow: hidden;
+              background: none !important;
+              height: 100%;
+              width: 100%;
+            }
+          </style>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- -------------- End Map -------------- -->
+</main>

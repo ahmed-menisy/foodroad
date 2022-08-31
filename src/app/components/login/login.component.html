@@ -1,0 +1,86 @@
+<section class="login form d-lg-flex">
+  <div class="left item py-4 hstack min-vh-100">
+    <div class="hero col-md-11 col-lg-12 col-xl-10 mx-auto">
+      <div class="main-title">
+        <h1 class="te-green fw-bold hstack justify-content-center">
+          <img src="./assets/images/3.png" />
+          <span class="ms-1">Food<span class="te-yellow">Road</span></span>
+        </h1>
+      </div>
+
+      <div class="content mt-4">
+        <div class="title text-center">
+          <h2 class="te-green display-5">Sign In</h2>
+          <p class="te-light small">
+            Just sign in if you have an account in here. Enjoy our Website
+          </p>
+        </div>
+
+        <form class="mt-5" [formGroup]="login" (ngSubmit)="submitlogin(login)">
+          <div class="container-fluid">
+            <div class="vstack gap-3">
+              
+              <div class="data-input">
+                <input  autocomplete="off" 
+                formControlName="email"
+                #email
+                [ngClass]="{
+                  'is-invalid':(login.get('email')?.errors && email.value.length >0) ,
+                  'is-valid':(login.get('email')?.valid) 
+                }"
+                  class="form-control form-control-lg"
+                  type="email"
+                  id="email"
+                  placeholder=" "
+                />
+                <label for="email">Mail Address</label>
+                <ul *ngIf="login.get('email')?.errors &&email.value.length >0" class='alert alert-danger p-2 mt-1 small position-absolute w-100 text-nowrap '>
+                  <li>Required</li>
+                  <li>In Valid Email Format</li>
+                </ul>
+              </div>
+
+              <div class="data-input">
+                <input  autocomplete="off" 
+                formControlName="password"
+                #password
+                [ngClass]="{
+                  'is-invalid':(login.get('password')?.errors && password.value.length >0) ,
+                  'is-valid':(login.get('password')?.valid) 
+                }"
+                  class="form-control form-control-lg"
+                  type="password"
+                  id="password"
+                  placeholder=" "
+                />
+                <label for="password">Password</label>
+                <ul *ngIf="login.get('password')?.errors &&password.value.length >0" class='alert alert-danger p-2 mt-1 small position-absolute w-100 text-nowrap '>
+                  <li>Required</li>
+                  <li>Minimum eight characters</li>
+                  <li>at least one letter and one number</li>
+                </ul>
+                
+              </div>
+            </div>
+            <div class="vstack gap-3 mt-5">
+              <button
+                type="submit"
+                class="bt-re bt-green flex-grow-1 text-center"
+              >
+              <span *ngIf="isLogin"><i class="fas fa-spinner fa-spin"></i></span>
+              <span *ngIf="!isLogin"> LogIn</span>
+              </button>
+              <p class="bg-light p-2 col-10 mx-auto text-center small">
+                New to FoodRoad?
+                <a routerLink="/register" class="text-reset fw-bold h6">
+                  Join now</a
+                >
+              </p>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="right item"></div>
+</section>

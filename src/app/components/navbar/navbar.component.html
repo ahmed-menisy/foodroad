@@ -1,0 +1,140 @@
+<nav class="navbar navbar-expand-lg " #navRef>
+  <div class="container position-relative">
+    <a class="navbar-brand" routerLink="/home">
+      <h3 class="te-green fw-bold hstack justify-content-center h4">
+        <img src="./assets/images/3.png" />
+        <span class="ms-1">Food<span class="te-yellow">Road</span></span>
+      </h3>
+    </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse text-center text-lg-start" id="navbarSupportedContent">
+      <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            aria-current="page"
+            routerLink="/home"
+            routerLinkActive="active"
+            >Home</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            aria-current="page"
+            routerLink="/about"
+            routerLinkActive="active"
+            >About</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            aria-current="page"
+            routerLink="/resturant"
+            routerLinkActive="active"
+            >Restaurant</a
+          >
+        </li>
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle text-reset"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Pages
+          </a>
+          <ul class="dropdown-menu">
+            <li>
+              <a
+                class="dropdown-item nav-link"
+                routerLink="/become"
+                routerLinkActive="active"
+                >Become merchant</a
+              >
+            </li>
+            <!-- <li>
+              <a
+                class="dropdown-item nav-link"
+                routerLink="/single"
+                routerLinkActive="active"
+                >Single Restaurant
+              </a>
+            </li> -->
+            <li>
+              <a
+                class="dropdown-item nav-link"
+                routerLink="/our"
+                routerLinkActive="active"
+                >Our team
+              </a>
+            </li>
+            <!-- <li>
+              <a
+                class="dropdown-item nav-link"
+                routerLink="/faq"
+                routerLinkActive="active"
+                >FAQ
+              </a>
+            </li> -->
+          </ul>
+        </li>
+
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            aria-current="page"
+            routerLink="/service"
+            routerLinkActive="active"
+            >Service</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            aria-current="page"
+            routerLink="/contact"
+            routerLinkActive="active"
+            >Contact</a
+          >
+        </li>
+      </ul>
+      <ul class="navbar-nav mb-2 mb-lg-0">
+        <li class="nav-item hstack ">
+          <button class="nav-linkfav position-relative re-btn  p-1 mb-2 mb-lg-0 mx-auto" (click)="show()">
+            <i class="fa-solid fa-heart fa-2xl te-green"></i>
+            <span
+              class="top-50 start-50 small translate-middle te-yellow fw-bold position-absolute"
+              >{{ favNum }}</span
+            >
+          </button>
+        </li>
+        <li class="nav-item">
+          <button
+            class="nav-link bl-re bl-green text-reset ms-lg-3"
+            aria-current="page"
+            (click)="logOut()"
+          >
+            LogOut
+          </button>
+        </li>
+        <!-- <li class="nav-item">
+          <a class="nav-link " aria-current="page" routerLink="/about" routerLinkActive="active">About</a>
+        </li> -->
+      </ul>
+    </div>
+
+  </div>
+  <app-fav-cart ></app-fav-cart>
+</nav>

@@ -1,0 +1,6 @@
+<app-navbar *ngIf="isLogin"></app-navbar>
+<router-outlet (activate)="onActivate($event)"></router-outlet>
+<app-footer *ngIf="isLogin"></app-footer>
+<div class="go-up d-none" *ngIf="isLogin" #goUp (click)="goTop()">
+  <i class="fa-solid fa-angles-up fa-lg te-yellow"></i>
+</div>

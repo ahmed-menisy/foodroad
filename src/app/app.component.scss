@@ -1,0 +1,20 @@
+:host {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  .go-up {
+    cursor: pointer;
+    position: fixed;
+    z-index: 9999;
+    bottom: .6rem;
+    right: 1rem;
+    display: grid;
+    place-content: center;
+    background-color: var(--green);
+    width: 40px;height: 40px;
+    border-radius: 50%;
+  }
+
+}

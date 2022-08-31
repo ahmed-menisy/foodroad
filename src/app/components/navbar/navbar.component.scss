@@ -1,0 +1,18 @@
+.navbar-brand img {
+  width: 30px;
+}
+.nav-link {
+  font-size: 1.1rem;
+}
+.nav-link.active {
+  color: var(--yello);
+  background-color: transparent !important;
+  font-weight: 700;
+}
+:host {
+  .fav {
+    all: unset;
+   
+    cursor: pointer;
+  }
+}

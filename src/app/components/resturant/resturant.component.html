@@ -1,0 +1,117 @@
+<header>
+
+ 
+  <div class="container pt-5" data-aos="fade-up">
+    <div class="row flex-wrap-reverse align-items-center">
+      <div class="col-lg-6 position-relative" data-aos="fade-right"  data-aos-delay="600">
+        <div class="content">
+          <h1 class="display-5 fw-semibold">Discover Restaurant</h1>
+          <p class="text-muted py-3">
+            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+            nonumy eirmod tempor invidunt ut labore et
+          </p>
+        </div>
+        <div class="image-icon position-absolute top-100 start-50">
+          <img src="./assets/images/49.png" alt="photo food icon" />
+        </div>
+      </div>
+      <div class="col-lg-5 offset-lg-1" data-aos="fade-left"   data-aos-delay="900">
+        <div class="image">
+          <img
+            src="./assets/images/48.png"
+            alt="food photo"
+            class="w-100"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<main>
+  <!-- ------------ Start Let's Find Something Delicious For You ------------ -->
+  <section class="something">
+    <div class="container">
+      <div class="main-title text-center" data-aos="fade-left">
+        <h2 class="display-5 fw-semibold">
+          Let's Find Something<br />
+          Delicious For You
+        </h2>
+        <p class="w-50 mx-auto lh-lg mt-4 text-black-50">
+          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+          nonumy eirmod tempor invidunt ut labore et dolore magna.
+        </p>
+      </div>
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-5 mt-5">
+        <div class="col" *ngFor="let resturant of resturantData" data-aos="fade-left">
+          <div class="card h-100 shadow border-0">
+            <img
+              class="card-img-top"
+              [src]="
+                resturant.photos
+                  ? pathImg + resturant.photos[0].photo_reference + googleKey
+                  : './assets/images/eror.jpg'
+              "
+              [alt]="resturant.name"
+            />
+            <div class="card-body text-center">
+              <h3 class="h4 fw-semibold card-title">{{ resturant.name }}</h3>
+              <p class="card-text text-black-50">
+                {{ resturant.formatted_address }}
+              </p>
+              <div class="hstack justify-content-center">
+                <ngb-rating
+                  class="te-yellow fs-5"
+                  [max]="5"
+                  [(rate)]="resturant.rating"
+                  [readonly]="true"
+                ></ngb-rating>
+                <span class="mb-0 small text-black-50"> User Rating Total : {{resturant.user_ratings_total}}</span>
+              </div>
+            </div>
+            <span
+              class="open-close badge text-bg-success h5 position-absolute top-0 start-50 translate-middle"
+              >{{ resturant.opening_hours ? resturant.opening_hours.open_now ? 'Open Now':'Close Now':'Note Found' }}</span
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ------------ End Let's Find Something Delicious For You ------------ -->
+    <!-- --------------- End What Customers Say About us ---------------  -->
+    <section class="besst-food" >
+      <div class="container">
+        <div class="row flex-wrap-reverse gy-4 align-items-center">
+          <div class="col-lg-5" data-aos="zoom-in">
+            <h2 class="display-6 fw-semibold">
+              The Best Food Delivery <br />App. Download Now!
+            </h2>
+            <p class="lh-lg text-muted py-3">
+              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+              nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
+              erat, sed diam voluptua.
+            </p>
+            <h4>Download Available</h4>
+            <div class="hstack">
+              <div class="image">
+                <img src="./assets/images/app.png" alt="app store" />
+              </div>
+              <div class="image">
+                <img src="./assets/images/google.png" alt="google store" />
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-5 offset-lg-2" data-aos="zoom-in-up">
+            <div class="image">
+              <img
+                class="w-100"
+                src="./assets/images/31.png"
+                alt="phone photo"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- --------------- End What Customers Say About us ---------------  -->
+</main>

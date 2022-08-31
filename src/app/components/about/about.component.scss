@@ -1,0 +1,43 @@
+:host {
+
+  section {
+    padding: 5rem 0;
+  }
+
+  .we-name--item  {
+    margin-left: -1.2rem;
+    box-shadow: 0 0 10px rgb(0 0 0 / 20%);
+  }
+  
+  .mission {
+
+    .content {
+
+      width: fit-content;
+      margin:0 auto;
+
+      li {
+        counter-increment: num-count;
+      }
+
+      h3 {
+        position: relative;
+        
+        &::before {
+          content: '0' counter(num-count);
+          color: var(--green);
+          padding-right: .3rem;
+        }
+      }
+
+
+    }
+
+    .col-lg-6 {
+      background-color: #F8FCF8;
+      padding: 1.5rem;
+      border-radius: 2rem;
+    }
+  }
+
+}

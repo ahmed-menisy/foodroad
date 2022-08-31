@@ -1,0 +1,58 @@
+:host {
+
+  section {
+    padding: 5rem 0;
+  }
+
+  header {
+    position: relative;
+    &::before {
+      position: absolute;
+      content: '';
+      z-index: -1;
+      inset: 0 0 160px 0;
+      background-color: #F8FCF8;
+    }
+  }
+
+  .simple {
+    .col {
+      counter-increment: num-counter;
+    }
+    .item {
+      border-top: 2px dashed #C8C8C8;
+      
+      .fw-semibold {
+        margin-top: 30px;
+      }
+      .h1 {
+        position: relative;
+        &::after {
+          content: counter(num-counter);
+          position: absolute;
+          transform: translateY(-50%);
+        background-color: #fff;
+        width: fit-content;
+        padding-right: 1rem;
+        }
+
+      }
+    }
+  }
+
+
+  .need {
+    .col-lg-6 {
+      position: relative;
+      &::before {
+        content: '';
+        position: absolute;
+        z-index: -1;
+        inset: -50px 0 -50px -100px;
+        background-color: #F8FCF8;
+        border-radius: 1rem;
+        box-shadow: 0 0 20px rgb(0 0 0 / 7%);
+      }
+    }
+  }
+}

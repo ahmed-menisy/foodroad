@@ -1,0 +1,42 @@
+.form .item {
+  flex: 1;
+}
+.form .right {
+  background: url("../../../assets/images/2.png") center / cover no-repeat;
+}
+.form .data-input {
+  position: relative;
+}
+.form .data-input label {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-inline-start: 1.2rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--light);
+  transition: top var(--duration), font-size var(--duration);
+  pointer-events: none;
+}
+.form .data-input input {
+  border-radius: 50px;
+  font-size: 0.9rem;
+  padding: 0.8rem 1.1rem;
+}
+.form .data-input input:focus {
+  box-shadow: unset;
+}
+.form .data-input input:not(:placeholder-shown) + label {
+  top: 0;
+  background-color: #fff;
+  padding: 0 0.2rem;
+  font-size: 0.75rem;
+}
+.form .data-input input[type="number"]::-webkit-inner-spin-button {
+  display: none;
+}
+ul {
+  list-style-position: inside;
+  z-index: 999;
+  pointer-events: none;
+}
