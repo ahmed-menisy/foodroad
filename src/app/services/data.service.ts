@@ -16,7 +16,7 @@ export class DataService {
     }
   }
 
-  baseUrlGoogle: String = `https://maps.googleapis.com/maps/api/place/textsearch/json?query=restaurants&key=AIzaSyCv1EyfR44uEhQtGhzGPGHuzc3U0c3Y5Wk`;
+  baseUrlGoogle: String = `https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/textsearch/json?query=restaurants&key=AIzaSyCv1EyfR44uEhQtGhzGPGHuzc3U0c3Y5Wk`;
   //to sav fav list and shar it
   favList: Map<any, any> = new Map();
   // to shar fav and subscript
@@ -46,14 +46,15 @@ export class DataService {
 
   // get resturant by google map
   getResturant(): Observable<any> {
-    return this.http.get(`${this.baseUrlGoogle}`, {
+    return this.http.post(`${this.baseUrlGoogle}`, {
       headers: new HttpHeaders({
-        'Content-Type': 'application/json',
         'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Headers': 'Content-Type',
         'Access-Control-Allow-Methods': 'GET,POST,OPTIONS,DELETE,PUT',
-        Authorization: 'Bearer AIzaSyCv1EyfR44uEhQtGhzGPGHuzc3U0c3Y5Wk',
       }),
     });
   }
 }
+/*
+https://cors-anywhere.herokuapp.com/
+لحل مشكلة cros
+*/
