@@ -24,12 +24,12 @@ export class DataService {
 
   // to get our data from js file
   get ourData(): Observable<any> {
-    return this.http.get(`../../assets/data.json`);
+    return this.http.get(`./assets/data.json`);
   }
 
   //to get parenship in folder json
   get Partnership(): Observable<any> {
-    return this.http.get(`../../assets/data.json`);
+    return this.http.get(`./assets/data.json`);
   }
 
   //to get food
@@ -58,3 +58,6 @@ export class DataService {
 https://cors-anywhere.herokuapp.com/
 لحل مشكلة cros
 */
+
+
+// ng build --build-optimizer --output-path docs --base-href /foodroad/
