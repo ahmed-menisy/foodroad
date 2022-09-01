@@ -1,7 +1,123 @@
 /* You can add global styles to this file, and also import other style files */
 @import url("https://fonts.googleapis.com/css2?family=Jost:wght@100;200;300;400;500;600;700;800;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Sen:wght@400;700;800&display=swap");
-@import 'aos/dist/aos.css'; // You can also use <link> for styles
+@import "aos/dist/aos.css"; // You can also use <link> for styles
+
+:root {
+  --yello: #febd2e;
+  --green: #519259;
+  --light: #92929d;
+  --duration: 0.5s cubic-bezier(0.22, 0.68, 0, 1.71);
+}
+@media screen and (max-width: 575.98px) {
+  :root {
+    font-size: 13px;
+  }
+}
+::selection {
+  background-color: #febc2ea9;
+  color: #519259;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--green, #519259);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--yello, #febd2e);
+}
+// -------- custom button and classes
+.te-yellow {
+  color: var(--yello, #febd2e);
+}
+
+.te-green {
+  color: var(--green, #519259);
+}
+
+.te-light {
+  color: #92929d;
+}
+
+.bt-re {
+  all: unset;
+  padding: 0.7rem 2rem;
+  border-radius: 50px;
+  font-weight: 600;
+}
+
+.bt-re:hover {
+  background-image: linear-gradient(
+    to right,
+    rgb(0 0 0 / 10%) 50%,
+    rgb(0 0 0 / 5%)
+  );
+}
+
+.bt-green {
+  background-color: var(--green, #519259);
+  color: #fff !important;
+}
+
+.bl-re {
+  all: unset;
+  padding: 0.5rem 1.5rem !important;
+  border-radius: 50px;
+  font-weight: 600;
+}
+
+.bl-green {
+  background-image: linear-gradient(50deg, #519259 30%, #89d292);
+  color: #fff !important;
+  box-shadow: 10px 10px 50px #51925934;
+  transition: all 0.4s;
+  &:hover {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+  }
+}
+
+.bl-yellow {
+  background-image: linear-gradient(50deg, #febd2e 30%, #febc2eb2);
+  color: #fff !important;
+  box-shadow: 10px 10px 50px #51925934;
+  transition: all 0.4s;
+  &:hover {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+  }
+}
+
+.bt-light {
+  background-color: #f1f1f5;
+}
+
+body {
+  font-family: "Sen", sans-serif;
+  height: 100%;
+  width: 100%;
+}
+
+:is(h1, h2, h3, h4, h5, h6) {
+  font-family: "Jost", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer !important;
+}
+
+.owl-carousel .owl-item img {
+  width: auto;
+}
+
+.re-btn {
+  all: unset;
+}
 
 .loading {
   position: absolute;
@@ -14,104 +130,21 @@
   background-color: rgba(117, 111, 111, 0.322);
   backdrop-filter: blur(10px);
 }
-:root {
-  --yello: #febd2e;
-  --green: #519259;
-  --light: #92929d;
-  --duration: 0.5s cubic-bezier(0.22, 0.68, 0, 1.71);
-}
-::selection {
-  background-color: #febc2ea9;
-  color: #519259;
-}
-::-webkit-scrollbar {
-  width: 10px;
-}
-::-webkit-scrollbar-track {
-  background-color: var(--green, #519259);
-}
-::-webkit-scrollbar-thumb {
-  background-color: var(--yello, #febd2e);
-}
-// -------- custom button and classes
-.te-yellow {
-  color: var(--yello, #febd2e);
-}
-.te-green {
-  color: var(--green, #519259);
-}
-.te-light {
-  color: #92929d;
-}
-.bt-re {
-  all: unset;
-  padding: 0.7rem 2rem;
-  border-radius: 50px;
-  font-weight: 600;
-}
-.bt-re:hover {
-  background-image: linear-gradient(
-    to right,
-    rgb(0 0 0 / 10%) 50%,
-    rgb(0 0 0 / 5%)
-  );
-}
-.bt-green {
-  background-color: var(--green, #519259);
-  color: #fff !important;
-}
-.bl-re {
-  all: unset;
-  padding: 0.5rem 1.5rem !important;
-  border-radius: 50px;
-  font-weight: 600;
-}
-.bl-green {
-  background-image: linear-gradient(50deg , #519259 30%,#89D292 );
-  color: #fff !important;
-  box-shadow: 10px 10px 50px #51925934;
-}
-.bl-yellow {
-  background-image: linear-gradient(50deg , #febd2e 30%,#febc2eb2 );
-  color: #fff !important;
-  box-shadow: 10px 10px 50px #51925934;
-}
-.bt-light {
-  background-color: #f1f1f5;
-}
-body {
-  font-family: "Sen", sans-serif;
-  height: 100%;
-  width: 100%;
-  overflow-x: hidden;
-}
-:is(h1, h2, h3, h4, h5, h6) {
-  font-family: "Jost", sans-serif;
-}
-a {
-  text-decoration: none;
-  cursor: pointer !important;
-}
-.owl-carousel .owl-item img {
-  width: auto ;
-}
-.re-btn {
-  all: unset;
-}
-// ---------- Custome Form 
+
+// ---------- Custome Form
 .i-g {
   display: flex;
   margin-bottom: 1.4rem;
   position: relative;
 }
 
-.i-g :is(input,textarea) {
+.i-g :is(input, textarea) {
   flex-grow: 1;
-  border: 1px solid #D5D5D5;
+  border: 1px solid #d5d5d5;
   border-left: unset;
   height: 3rem;
-  border-radius: 0 2rem  2rem 0;
-  padding-left: .3rem;
+  border-radius: 0 2rem 2rem 0;
+  padding-left: 0.3rem;
   color: #0000007e;
   &.is-invalid {
     border-color: red !important ;
@@ -126,15 +159,15 @@ a {
   resize: none;
 }
 
-.i-g :is(input ,textarea):focus {
+.i-g :is(input, textarea):focus {
   outline: unset;
 }
 
 .i-g label {
   flex-shrink: 0;
   font-size: 1.5rem;
-  color: #D5D5D5;
-  border: 1px solid #D5D5D5;
+  color: #d5d5d5;
+  border: 1px solid #d5d5d5;
   border-right: unset;
   display: grid;
   place-content: center;
@@ -151,6 +184,6 @@ a {
 }
 
 ul.alert {
-  z-index: 9999;
+  z-index: 9999999;
   pointer-events: none;
 }

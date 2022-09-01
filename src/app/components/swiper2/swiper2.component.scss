@@ -44,13 +44,16 @@
   place-content: center;
 }
 div.arrow {
- 
-  img  {
-     width: 40px;
-     cursor: pointer;
+  img {
+    width: 40px;
+    cursor: pointer;
+    transition: all 0.4s;
+    &:hover {
+      transform: scale(1.05);
+      filter: brightness(1.1);
+    }
   }
   button {
     all: unset;
   }
- 
 }

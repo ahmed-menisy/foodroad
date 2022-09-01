@@ -3,41 +3,43 @@
     'url(' + foodDataList.image_url + ') center / cover no-repeat fixed'
   "
 ></header>
-<section class="data-hero  position-relative mb-5 ">
-<div class="data-content ">
-  <span
-  class="badge bg-white te-green fs-6 shadow position-absolute start-50 top-0 translate-middle-x "
-  >{{ foodDataList.publisher }}</span
->
-<h1 class="text-center fw-bold h5 text-dark mt-3">{{ foodDataList.title }}</h1>
-<div class="mt-4 info">
-  <p
-    class="bg-dark bg-opacity-75 my-1 p-1 rounded-1"
-    *ngFor="let text of foodDataList.ingredients"
-  >
-    {{ text }}
-  </p>
-</div>
+<section class="data-hero col-lg-10 col-md-11 position-relative mb-5">
+  <div class="data-content">
+    <span
+      class="badge bg-white te-green fs-6 shadow position-absolute start-50 top-0 translate-middle-x"
+      >{{ foodDataList.publisher }}</span
+    >
+    <h1 class="text-center fw-bold h5 text-dark mt-3">
+      {{ foodDataList.title }}
+    </h1>
+    <div class="mt-4 info">
+      <p
+        class="bg-dark bg-opacity-75 my-1 p-1 rounded-1"
+        *ngFor="let text of foodDataList.ingredients"
+      >
+        {{ text }}
+      </p>
+    </div>
 
-<div class="row gy-3 url-btn mt-4 w-75 mx-auto">
-  <div class="col-md-6">
-    <a
-      [href]="foodDataList.source_url"
-      target="_blank"
-      class="bl-re bl-green d-block text-center"
-      >View Source</a
-    >
+    <div class="row gy-3 url-btn mt-4 w-75 mx-auto">
+      <div class="col-md-6">
+        <a
+          [href]="foodDataList.source_url"
+          target="_blank"
+          class="bl-re bl-green d-block text-center"
+          >View Source</a
+        >
+      </div>
+      <div class="col-md-6">
+        <a
+          [href]="foodDataList.publisher_url"
+          target="_blank"
+          class="bl-re bl-green d-block text-center"
+          >View Publisher</a
+        >
+      </div>
+    </div>
   </div>
-  <div class="col-md-6">
-    <a
-      [href]="foodDataList.publisher_url"
-      target="_blank"
-      class="bl-re bl-green d-block text-center"
-      >View Publisher</a
-    >
-  </div>
-</div>
-</div>
 </section>
 <div class="loading" *ngIf="isLoading">
   <i class="fas fa-spinner fa-spin fa-6x te-green"></i>

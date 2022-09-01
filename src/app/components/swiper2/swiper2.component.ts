@@ -18,9 +18,8 @@ SwiperCore.use([Grid]);
 @Component({
   selector: 'app-swiper2',
   template: `
-
     <div class="hstack  justify-content-between pb-5">
-      <h2 class="fw-bold">Delicious Food For You</h2>
+      <h2 class="fw-bold h4">Delicious Food For You</h2>
       <div class="hstack arrow gap-3 justify-content-end">
         <button (click)="slidePrev()">
           <img
@@ -60,7 +59,7 @@ SwiperCore.use([Grid]);
       }"
       class="mySwiper p-3"
     >
-      <ng-container *ngFor="let food of foodList" >
+      <ng-container *ngFor="let food of foodList">
         <ng-template swiperSlide>
           <div class="card  shadow">
             <div [routerLink]="['/details', food.recipe_id]" class="item-card">
@@ -123,9 +122,7 @@ SwiperCore.use([Grid]);
   host: { class: 'swip' },
 })
 export class Swiper2Component implements OnInit, OnChanges {
-  constructor(private _DataService: DataService) {
-    
-  }
+  constructor(private _DataService: DataService) {}
   @Input() title!: string;
   foodList: any;
   width: any;
@@ -137,8 +134,6 @@ export class Swiper2Component implements OnInit, OnChanges {
       const favDataLocal = JSON.parse(localStorage.getItem('foodFav')!);
       this.favList = new Map(favDataLocal);
       this._DataService.favDataShare.next(this.favList);
-      
-      
     }
     this.foodData('pizza');
   }

@@ -1,20 +1,27 @@
 :host {
   min-height: 100vh;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  overflow-x: hidden;
 
   .go-up {
     cursor: pointer;
     position: fixed;
     z-index: 9999;
-    bottom: .6rem;
+    bottom: 0.6rem;
     right: 1rem;
     display: grid;
     place-content: center;
     background-color: var(--green);
-    width: 40px;height: 40px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
+    transition: all 0.4s;
+    &:hover {
+      transform: scale(1.05);
+      filter: brightness(1.1);
+    }
   }
-
 }

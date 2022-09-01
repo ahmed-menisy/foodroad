@@ -42,14 +42,16 @@
   <!-- ---------------- Start Simple Way ---------------- -->
   <section class="simple-way" id="simple-way">
     <div class="container">
-      <div class="row row-cols-1 row-cols-lg-2 gy-5 align-items-center">
+      <div
+        class="row row-cols-1 row-cols-lg-2 gy-5 align-items-center flex-wrap-reverse"
+      >
         <div class="col" data-aos="fade-up-right">
           <div class="image">
             <img class="w-100" src="./assets/images/5.png" alt="phone photo" />
           </div>
         </div>
         <div class="col" data-aos="fade-up-left">
-          <div class="content ps-5">
+          <div class="content ps-lg-5">
             <h2 class="h1 fw-bolder" data-aos="fade-up" data-aos-delay="700">
               Simple Way to Order<br />
               Your Food Faster
@@ -224,7 +226,11 @@
   <!-- ---------------- Start Our Menus ---------------- -->
   <section class="our">
     <div class="container">
-      <div class="main-title text-center" data-aos="fade-left">
+      <div
+        class="main-title text-center"
+        data-aos="fade-left"
+        data-aos-offset="-200"
+      >
         <h2 class="display-4 fw-semibold">Our Menus</h2>
       </div>
       <div class="our-content pt-5">
@@ -309,7 +315,7 @@
         (ngSubmit)="send($event, msg)"
         [formGroup]="msg"
       >
-        <div class="row gy-4 align-items-center">
+        <div class="row gy-4 align-items-center flex-wrap-reverse">
           <div class="col-lg-5" data-aos="flip-right" data-aos-delay="200">
             <h2 class="display-6 fw-semibold lh-lg">
               Express food ordering<br />

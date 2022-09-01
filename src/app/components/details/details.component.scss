@@ -1,7 +1,5 @@
 :host {
   position: relative;
-
-
 }
 
 // Start Header
@@ -9,7 +7,7 @@ header {
   min-height: 70vh;
   position: relative;
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     inset: 0;
     background-color: rgb(0 0 0 / 60%);
@@ -19,18 +17,16 @@ header {
 
 // Start Section
 .data-hero {
-    width: 80%;
   max-height: 80vh;
   overflow-y: auto;
   margin: 0 auto;
   padding: 1rem;
- margin-top: -10rem;
-  border-radius: .5rem;
-  box-shadow: 0 0 15px rgba(0,0,0,.2);
+  margin-top: -10rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   background-color: #fff;
 }
 .data-content {
-  
   .info {
     p {
       counter-increment: num-info;
@@ -42,7 +38,7 @@ header {
         content: counter(num-info);
         width: 45px;
         color: var(--green);
-        padding:0 .3rem;
+        padding: 0 0.3rem;
         font-weight: 700;
         font-size: 1.3rem;
       }
