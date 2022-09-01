@@ -1,7 +1,7 @@
 <owl-carousel-o [options]="customOptions">
   <ng-container *ngFor="let food of ourFood">
     <ng-template  carouselSlide [id]="food.title">
-      <div #item (dblclick)="check($event,food.title)"  class="item  rounded-5 py-5 text-center" data-aos="fade-right">
+      <div #item (click)="check($event,food.title)" (touchend)="check($event,food.title)"  class="item  rounded-5 py-5 text-center" data-aos="fade-right">
         <div class="image">
           <img
             class="img-fluid mx-auto"

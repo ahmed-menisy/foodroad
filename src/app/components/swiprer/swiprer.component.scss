@@ -1,13 +1,12 @@
 @import "~ngx-owl-carousel-o/lib/styles/scss/owl.carousel";
 @import "~ngx-owl-carousel-o/lib/styles/scss/owl.theme.default";
 
-
 :host {
-
   .item {
     background-color: #f8fcf8;
     cursor: pointer;
   }
+
   .item.active {
     background-color: var(--green);
     color: #fff;

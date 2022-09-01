@@ -187,3 +187,13 @@ ul.alert {
   z-index: 9999999;
   pointer-events: none;
 }
+.owl-theme .owl-nav [class*="owl-"] {
+  background: transparent;
+  &:hover {
+    background: #51925960;
+    transform: scale(1.1);
+  }
+  &:active {
+    background: #519259;
+  }
+}

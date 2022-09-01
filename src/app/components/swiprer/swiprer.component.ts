@@ -46,14 +46,25 @@ export class SwiprerComponent implements OnInit {
   customOptions: OwlOptions = {
     loop: true,
     margin: 20,
-    mouseDrag: true,
-    touchDrag: true,
+    mouseDrag: false,
+    touchDrag: false,
     autoWidth:true,
     dots:false,
     navSpeed: 700,
+    nav:true,
+    navText:[` <img
+    class="img-fluid"
+    src="./assets/images/left.png"
+    alt="right photo"
+  />`,`<img
+  class="img-fluid"
+  src="./assets/images/right.png"
+  alt="left photo"
+/>`],
     responsive: {
       0: {
         items: 2,
+        
       },
       400: {
         items: 3,
