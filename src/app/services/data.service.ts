@@ -32,6 +32,11 @@ export class DataService {
     return this.http.get(`./assets/data.json`);
   }
 
+  //to get parenship in folder json
+  get countries(): Observable<any> {
+    return this.http.get(`./assets/data.json`);
+  }
+
   //to get food
   foodData(search: string): Observable<any> {
     return this.http.get(
@@ -42,6 +47,21 @@ export class DataService {
   // to det details food by id
   foodDataId(id: number): Observable<any> {
     return this.http.get(`https://forkify-api.herokuapp.com/api/get?rId=${id}`);
+  }
+
+  // get location x and y in google map
+  getLocation(search:String):Observable<any> {
+    return this.http.get(`https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/geocode/json?address=${search}&key=AIzaSyCv1EyfR44uEhQtGhzGPGHuzc3U0c3Y5Wk`)
+  }
+
+  // get resturant by google map
+  getResturantByLocation(x:number,y:number): Observable<any> {
+    return this.http.post(`https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/textsearch/json?query=restaurants&key=AIzaSyCv1EyfR44uEhQtGhzGPGHuzc3U0c3Y5Wk&location=${x}%2C${y}`, {
+      headers: new HttpHeaders({
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Methods': 'GET,POST,OPTIONS,DELETE,PUT',
+      }),
+    });
   }
 
   // get resturant by google map

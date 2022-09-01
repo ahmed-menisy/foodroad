@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
 
             localStorage.setItem('fuser', response.token);
             
-            // sweat alert 
+            //---------- sweat alert 
             const Toast = Swal.mixin({
               toast: true,
               position: 'top-end',
@@ -50,6 +50,8 @@ export class LoginComponent implements OnInit {
               icon: 'success',
               title: `${response.message}`,
             });
+
+            
           } else {
             const Toast = Swal.mixin({
               toast: true,
