@@ -9,7 +9,8 @@ import Swal from 'sweetalert2';
 })
 export class ResturantComponent implements OnInit {
   constructor(private _DataService: DataService) {}
-  resturantData: any = [];
+  resturantData: any[] = [];
+  page = 1
   pathImg: string = `https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&maxheight=300&photo_reference=
   `;
   isLoading: boolean = false;
@@ -34,6 +35,7 @@ export class ResturantComponent implements OnInit {
 
   //get location search text
   getLocation(e: any): void {
+    this.page = 1
     if (e.target.value.length > 0) {
       this.isLoading = true;
       this._DataService.getLocation(e.target.value).subscribe({

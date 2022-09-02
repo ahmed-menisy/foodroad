@@ -61,7 +61,7 @@ SwiperCore.use([Grid]);
     >
       <ng-container *ngFor="let food of foodList">
         <ng-template swiperSlide>
-          <div class="card  shadow">
+          <div class="card h-100 shadow">
             <div [routerLink]="['/details', food.recipe_id]" class="item-card">
               <img
                 class="card-img-top"
@@ -91,9 +91,9 @@ SwiperCore.use([Grid]);
                 </li>
               </ul>
               <div class="card-body">
-                <h3 class="h4">{{ food.title.split(' ', 3).join(' ') }}...</h3>
+                <h3 class="h6">{{ food.title.split(' ', 3).join(' ') }}...</h3>
                 <span class="badge bg-success  my-2">{{ food.publisher }}</span>
-                <p>Consetetur sadipscing elitr, sed . . . .</p>
+                <p class="small">Consetetur sadipscing elitr, sed . . . .</p>
               </div>
             </div>
             <div class="hstack justify-content-between py-4 card-body">
