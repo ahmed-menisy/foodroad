@@ -9,13 +9,15 @@ import Swal from 'sweetalert2';
 })
 export class ResturantComponent implements OnInit {
   constructor(private _DataService: DataService) {}
+
   resturantData: any[] = [];
-  page = 1
+  page = 1;
   pathImg: string = `https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&maxheight=300&photo_reference=
   `;
   isLoading: boolean = false;
   countries: any[] = [];
   googleKey: string = `&key=AIzaSyCv1EyfR44uEhQtGhzGPGHuzc3U0c3Y5Wk`;
+
   ngOnInit(): void {
     this.getCountries();
     this.getResturantGoogle();
@@ -35,13 +37,13 @@ export class ResturantComponent implements OnInit {
 
   //get location search text
   getLocation(e: any): void {
-    this.page = 1
+    this.page = 1;
     if (e.target.value.length > 0) {
       this.isLoading = true;
       this._DataService.getLocation(e.target.value).subscribe({
         next: (response) => {
           console.log(response.status);
-          
+
           if (response.status == 'OK') {
             const Toast = Swal.mixin({
               toast: true,
@@ -69,8 +71,7 @@ export class ResturantComponent implements OnInit {
                   this.isLoading = false;
                 },
               });
-          } 
-          else {
+          } else {
             this.isLoading = false;
             // sweat alert
             const Toast = Swal.mixin({
@@ -95,6 +96,7 @@ export class ResturantComponent implements OnInit {
 
   // get resturant google
   getResturantGoogle(): void {
+    this.isLoading = true;
     this._DataService.getResturant().subscribe({
       next: (response) => {
         this.resturantData = response.results;
@@ -102,6 +104,9 @@ export class ResturantComponent implements OnInit {
       },
       error(err: Error) {
         console.log(err);
+      },
+      complete: () => {
+        this.isLoading = false;
       },
     });
   }

@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
 })
 export class DataService {
   constructor(private http: HttpClient, private router: Router) {
+    
     // when start app any page get fav item
     if (localStorage.getItem('foodFav')) {
       const favDataLocal = JSON.parse(localStorage.getItem('foodFav')!);

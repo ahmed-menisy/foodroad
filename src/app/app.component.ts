@@ -20,14 +20,16 @@ export class AppComponent implements OnInit {
     private render: Renderer2,
     private _DataService: DataService
   ) {}
+
   @ViewChild('goUp') goUp!: ElementRef;
   isLogin: boolean = false;
   secOffset: any;
+
   ngOnInit(): void {
     // ------------ AOS ANIMATION
     AOS.init({
-      duration: 1000,
-      offset: 250,
+      duration: 400,
+      offset: 160,
     });
 
     //------------ Scroll show go up and hidde

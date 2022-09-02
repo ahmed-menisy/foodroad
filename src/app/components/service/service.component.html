@@ -265,72 +265,59 @@
               </h2>
             </div>
             <div class="content">
-              <div class="question border-bottom pb-3 pt-1">
-                <button
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapseExample"
-                  aria-expanded="false"
-                  aria-controls="collapseExample"
-                  class="d-flex align-items-center p-2 w-100 re-btn fw-bold justify-content-between"
-                  (click)="show($event)"
-                >
-                  <h3 class="mb-0 h5 fw-bold">How Long My Order Delivery?</h3>
-                  <span> <i class="fa-solid fa-minus"></i></span>
-                </button>
-                <p
-                  class="text-black-50 lh-lg small collapse show"
-                  id="collapseExample"
-                >
-                  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                  diam nonumy eirmod tempor invidunt ut labore et dolore magna
-                  aliquyam erat, sed diam.
-                </p>
-              </div>
-              <div class="question border-bottom pb-3 my-3 pt-1">
-                <button
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapseExample2"
-                  aria-expanded="false"
-                  aria-controls="collapseExample"
-                  class="d-flex align-items-center p-2 w-100 re-btn fw-bold justify-content-between"
-                  (click)="show($event)"
-                >
-                  <h3 class="mb-0 h5 fw-bold">What Kind Payment Available?</h3>
-                  <span> <i class="fa-solid fa-plus"></i></span>
-                </button>
-                <p
-                  class="text-black-50 lh-lg small collapse"
-                  id="collapseExample2"
-                >
-                  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                  diam nonumy eirmod tempor invidunt ut labore et dolore magna
-                  aliquyam erat, sed diam.
-                </p>
-              </div>
-              <div class="question border-bottom pb-3 pt-1">
-                <button
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapseExample3"
-                  aria-expanded="false"
-                  aria-controls="collapseExample"
-                  class="d-flex align-items-center p-2 w-100 re-btn fw-bold justify-content-between"
-                  (click)="show($event)"
-                >
-                  <h3 class="mb-0 h5 fw-bold">Can I Order For Someone?</h3>
-                  <span> <i class="fa-solid fa-plus"></i></span>
-                </button>
-                <p
-                  class="text-black-50 lh-lg small collapse"
-                  id="collapseExample3"
-                >
-                  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                  diam nonumy eirmod tempor invidunt ut labore et dolore magna
-                  aliquyam erat, sed diam.
-                </p>
-              </div>
+              <ng-container
+                *ngFor="
+                  let quetion of quetions | slice: (page - 1) * 3:page * 3;
+                  index as index;
+                  first as first
+                "
+              >
+                <div class="question border-bottom pb-3 my-2 pt-1">
+                  <button
+                    type="button"
+                    data-bs-toggle="collapse"
+                    [attr.data-bs-target]="'#collapseExample' + index"
+                    aria-expanded="false"
+                    aria-controls="collapseExample"
+                    class="d-flex align-items-center p-2 w-100 re-btn fw-bold justify-content-between"
+                    (click)="show($event)"
+                  >
+                    <h3 class="mb-0 h5 fw-bold">{{ quetion.title }}</h3>
+                    <span>
+                      <i
+                        [ngClass]="{
+                          'fa-minus': first,
+                          'fa-plus': !first
+                        }"
+                        class="fa-solid"
+                      ></i
+                    ></span>
+                  </button>
+                  <p
+                    [class.show]="first"
+                    class="text-black-50 lh-lg small collapse"
+                    [id]="'collapseExample' + index"
+                  >
+                    {{ quetion.text }}
+                  </p>
+                </div>
+              </ng-container>
+
+              <ngb-pagination
+                [(page)]="page"
+                [pageSize]="3"
+                [collectionSize]="quetions.length"
+              >
+                <ng-template ngbPaginationPages let-page let-pages="pages">
+                  <!-- render the "pages" collection here -->
+                  <li
+                    class="ngb-custom-pages-item hstack gap-2 text-nowrap"
+                  *ngIf="pages.length > 0"
+                  >
+                    <div class="px-2">{{ page }} / {{ pages.length }}</div>
+                  </li>
+                </ng-template>
+              </ngb-pagination>
             </div>
           </div>
         </div>

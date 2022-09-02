@@ -201,4 +201,11 @@ ul.alert {
 .pagination {
   justify-content: center;
   margin-top: 1rem;
+  --bs-pagination-border-width: 0;
+  --bs-pagination-color: var(--green);
+  --bs-pagination-hover-bg: transparent;
+  --bs-pagination-font-size: 2rem;
+  --bs-pagination-focus-bg: transparent;
+  --bs-pagination-focus-color: var(--yello);
+  --bs-pagination-focus-box-shadow: unset;
 }

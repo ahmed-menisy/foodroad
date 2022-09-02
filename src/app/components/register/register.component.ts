@@ -11,8 +11,10 @@ export class RegisterComponent implements OnInit {
   constructor(private _AuthService: AuthService) {}
 
   ngOnInit(): void {}
+
   msgError!: String;
   isRegister: boolean = false;
+
   // register form
   register: FormGroup = new FormGroup({
     first_name: new FormControl(null, [
@@ -36,8 +38,9 @@ export class RegisterComponent implements OnInit {
       Validators.max(80),
     ]),
   });
-// to send register to api
-  submitRegister(register: FormGroup):void {
+
+  // to send register to api
+  submitRegister(register: FormGroup): void {
     const Toast = Swal.mixin({
       toast: true,
       position: 'top-end',
