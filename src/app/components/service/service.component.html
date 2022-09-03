@@ -272,17 +272,24 @@
                   first as first
                 "
               >
-                <div class="question border-bottom pb-3 my-2 pt-1">
+                <div
+                  class="question border-bottom pb-3 my-2 pt-1 position-relative"
+                >
                   <button
                     type="button"
                     data-bs-toggle="collapse"
                     [attr.data-bs-target]="'#collapseExample' + index"
                     aria-expanded="false"
                     aria-controls="collapseExample"
-                    class="d-flex align-items-center p-2 w-100 re-btn fw-bold justify-content-between"
+                    class="d-flex align-items-center p-2 w-100 re-btn fw-bold justify-content-between stretched-link"
                     (click)="show($event)"
                   >
-                    <h3 class="mb-0 h5 fw-bold">{{ quetion.title }}</h3>
+                    <h3
+                      [attr.data-num]="quetions.indexOf(quetion) + 1"
+                      class="mb-0 h5 fw-bold title-quetion"
+                    >
+                      {{ quetion.title }}
+                    </h3>
                     <span>
                       <i
                         [ngClass]="{
@@ -312,7 +319,7 @@
                   <!-- render the "pages" collection here -->
                   <li
                     class="ngb-custom-pages-item hstack gap-2 text-nowrap"
-                  *ngIf="pages.length > 0"
+                    *ngIf="pages.length > 0"
                   >
                     <div class="px-2">{{ page }} / {{ pages.length }}</div>
                   </li>

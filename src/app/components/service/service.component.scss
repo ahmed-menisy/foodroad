@@ -24,10 +24,15 @@
   }
 
   .frequently {
-
     .question {
       button {
         color: var(--green);
+      }
+
+      .title-quetion {
+        &::before {
+          content: attr(data-num) "-";
+        }
       }
     }
 
@@ -36,10 +41,10 @@
       &::before {
         position: absolute;
         z-index: -1;
-        content: '';
+        content: "";
         inset: 80px;
         border-radius: 1rem;
-        background-color: #F8FCF8;
+        background-color: #f8fcf8;
       }
     }
   }

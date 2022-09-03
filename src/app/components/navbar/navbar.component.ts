@@ -25,8 +25,10 @@ export class NavbarComponent implements OnInit {
     private ref: ElementRef
   ) {}
   @ViewChild('navRef') navRef!: ElementRef;
+  @ViewChild('favCartRef') favCartRef!: ElementRef;
   favData: any;
   favNum!: number;
+  timeOutRef: any = '';
   ngOnInit(): void {
     // when change data serveice  to get data from fav share
     this._DataService.favDataShare.subscribe(() => {
@@ -46,7 +48,30 @@ export class NavbarComponent implements OnInit {
         this._Renderer2.removeClass(this.navRef.nativeElement, 'bg-white');
       }
     });
+
+    // to hide fav cart if go out
+    this._Renderer2.listen(
+      this.ref.nativeElement.querySelector('.cart-fav'),
+      'mouseleave',
+      () => {
+        this.timeOutRef = setTimeout(() => {
+          this.ref.nativeElement
+            .querySelector('.cart-fav')
+            .classList.remove('show');
+        }, 2000);
+      }
+    );
+
+    // to stop hide cart if back to cart
+    this._Renderer2.listen(
+      this.ref.nativeElement.querySelector('.cart-fav'),
+      'mouseenter',
+      () => {
+        clearTimeout(this.timeOutRef);
+      }
+    );
   }
+
   // log out function
   logOut(): void {
     //---------- sweat alert
@@ -86,6 +111,7 @@ export class NavbarComponent implements OnInit {
       },
     });
   }
+
   // to show cart
   show(): void {
     this.ref.nativeElement.querySelector('.cart-fav').classList.toggle('show');

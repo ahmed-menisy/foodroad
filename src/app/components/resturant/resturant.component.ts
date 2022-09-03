@@ -17,13 +17,13 @@ export class ResturantComponent implements OnInit {
   isLoading: boolean = false;
   countries: any[] = [];
   googleKey: string = `&key=AIzaSyCv1EyfR44uEhQtGhzGPGHuzc3U0c3Y5Wk`;
-
+  isError: boolean = true;
   ngOnInit(): void {
     this.getCountries();
     this.getResturantGoogle();
   }
 
-  //get countires location then get data
+  //get countires name  from json file then get data
   getCountries(): void {
     this._DataService.countries.subscribe({
       next: (response) => {
@@ -40,6 +40,7 @@ export class ResturantComponent implements OnInit {
     this.page = 1;
     if (e.target.value.length > 0) {
       this.isLoading = true;
+      this.isError = true;
       this._DataService.getLocation(e.target.value).subscribe({
         next: (response) => {
           console.log(response.status);
@@ -87,8 +88,9 @@ export class ResturantComponent implements OnInit {
             });
           }
         },
-        error(err: Error) {
+        error:(err: Error)=> {
           console.log(err);
+          this.isError = false;
         },
       });
     }
@@ -96,14 +98,16 @@ export class ResturantComponent implements OnInit {
 
   // get resturant google
   getResturantGoogle(): void {
+    this.isError = true;
     this.isLoading = true;
     this._DataService.getResturant().subscribe({
       next: (response) => {
         this.resturantData = response.results;
         console.log(response.results);
       },
-      error(err: Error) {
+      error: (err: Error) => {
         console.log(err);
+        this.isError = false;
       },
       complete: () => {
         this.isLoading = false;
