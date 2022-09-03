@@ -127,16 +127,19 @@
       <ng-template #msg >
         <div class="bg-light rounded-3 p-3 border mt-2 text-center">
           <h2 class="display-1 " dir="rtl">
-            يوجد مشكله في الوصول الي Api
-            من فضلك
+         يوجد مشكله في الوصول الي API<br>
+         لحل المشكله وعرض المعلومات يجب عليك اتباع الخطوات التاليه<br>
+        
           </h2>
+          <ol type="1" class="h4 p-5 text-end alert alert-danger"  dir="rtl">
+            <li>قم بالضغط على الزرار بالاسفل</li>
+            <li>سوف يتم انتقالك الي صفحه جديده </li>
+            <li>قم بالضغط بداخلها على <bdi>Request temporary access to the demo server</bdi></li>
+            <li>ثم انتقل الي صفحة الموقع مره اخري وقم بعمل <bdi>Refresh</bdi> </li>
+            <li>وسوف يتم حل المشكله وعرض المعلومات</li>
+         </ol> 
             <a class="btn btn-danger btn-lg " target="_blank" href="https://cors-anywhere.herokuapp.com/corsdemo">اضغط هنا</a>
-            <h4 class=" mt-3" dir="rtl">
-              ثم قم بالضغط على<br>
-              <span class="bg-danger p-1 rounded">Request temporary access to the demo server</span><br>
-              عند انتقالك الي الصفحه الجديده لحل المشكله<br>
-              ثم قم بعمل refresh
-            </h4>
+           
         </div>
       </ng-template>
       
