@@ -19,18 +19,20 @@ export class AppComponent implements OnInit {
     private _AuthService: AuthService,
     private render: Renderer2,
     private _DataService: DataService
-  ) {}
+  ) {
+     // ------------ AOS ANIMATION
+     AOS.init({
+      duration: 300,
+      offset: 150,
+    });
+  }
 
   @ViewChild('goUp') goUp!: ElementRef;
   isLogin: boolean = false;
   secOffset: any;
 
   ngOnInit(): void {
-    // ------------ AOS ANIMATION
-    AOS.init({
-      duration: 400,
-      offset: 160,
-    });
+   
 
     //------------ Scroll show go up and hidde
     this.render.listen(window, 'scroll', () => {

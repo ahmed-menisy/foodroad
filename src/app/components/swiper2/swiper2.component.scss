@@ -25,9 +25,11 @@
   -webkit-align-items: center;
   align-items: center;
 }
+
 .swiper-slide img {
   height: 200px;
 }
+
 .card {
   height: 100% !important;
   border-color: transparent;
@@ -35,6 +37,7 @@
     cursor: pointer;
   }
 }
+
 .loading {
   z-index: 999;
   position: absolute;
@@ -43,6 +46,7 @@
   display: grid;
   place-content: center;
 }
+
 div.arrow {
   img {
     width: 40px;

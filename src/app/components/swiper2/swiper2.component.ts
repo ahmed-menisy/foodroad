@@ -5,6 +5,10 @@ import {
   Input,
   OnChanges,
   ViewChild,
+  ElementRef,
+  Renderer2,
+  ViewChildren,
+  QueryList,
 } from '@angular/core';
 
 // import Swiper core and required modules
@@ -62,6 +66,10 @@ SwiperCore.use([Grid]);
       <ng-container *ngFor="let food of foodList">
         <ng-template swiperSlide>
           <div class="card h-100 shadow">
+            <!-- <i
+              #heartIcon
+              class="heart-icon fas fa-heart  text-danger position-absolute start-50 top-50 translate-middle"
+            ></i> -->
             <div [routerLink]="['/details', food.recipe_id]" class="item-card">
               <img
                 class="card-img-top"
@@ -96,8 +104,7 @@ SwiperCore.use([Grid]);
                 <p class="small">Consetetur sadipscing elitr, sed . . . .</p>
               </div>
             </div>
-            <div class="hstack justify-content-between py-4 card-body">
-              <span class="text-success h5 fw-bold">$10.99</span>
+            <div class="hstack justify-content-center py-4 card-body">
               <button
                 [ngClass]="{
                   'bl-re': true,
@@ -122,8 +129,13 @@ SwiperCore.use([Grid]);
   host: { class: 'swip' },
 })
 export class Swiper2Component implements OnInit, OnChanges {
-  constructor(private _DataService: DataService) {}
+  constructor(
+    private _DataService: DataService,
+    private ref: ElementRef,
+    private _Renderer2: Renderer2
+  ) {}
   @Input() title!: string;
+  @ViewChildren('heartIcon') heartIcon!: QueryList<any>;
   foodList: any;
   width: any;
   isLoading: boolean = false;
@@ -169,6 +181,7 @@ export class Swiper2Component implements OnInit, OnChanges {
     if (!this.favList.has(food.recipe_id)) {
       this.favList.set(food.recipe_id, food);
       this.savData();
+     
     }
   }
   // to save food fav to local
