@@ -13,7 +13,7 @@ export class AuthService {
   }
 
   userData: BehaviorSubject<any> = new BehaviorSubject(null);
-  baseUrl: String = `https://routeegypt.herokuapp.com/`;
+  baseUrl: String = `https://sticky-note-fe.vercel.app/`;
   encodeToken!: string | null;
 
   registerForm(formData: Object): Observable<any> {
